@@ -21,7 +21,7 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .cover-test {
@@ -35,54 +35,90 @@ body {
 
 
 /* =========================
-   BRAND
+   HOME NAVBAR
 ========================= */
 
-.brand {
-    position: absolute;
+.navbar {
+    position: fixed;
     top: 20px;
-    left: 25px;
+    left: 30px;
+    right: 30px;
+
+    height: 40px;
+
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Logo */
+
+.navbar .brand {
+    position: absolute;
+    left: 0;
+    top: 0;
 
     display: flex;
     align-items: center;
     gap: 10px;
-
-    z-index: 5;
 }
 
-.logo img {
+.navbar .logo img {
     width: 42px;
     height: auto;
     display: block;
 }
 
-.letter .text {
+.navbar .letter .text {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.4px;
 }
 
-.text span {
+.navbar .letter .text span {
     color: #f43f5e;
 }
 
 
+/* Navigation pill */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    background: #7d8795;
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    padding: 4px 26px;
+
+    transition: background 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
 /* =========================
-   MENU
+   OLD MENU
 ========================= */
 
 .menu {
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    z-index: 5;
-}
-
-.menu img {
-    width: 28px;
-    height: auto;
-    display: block;
+    display: none;
 }
 
 
@@ -108,11 +144,12 @@ body {
 ========================= */
 
 .title-card {
-    margin-top: 28px;
+    margin-top: 65px;
 
     background: rgba(20, 18, 45, 0.92);
 
     border: 1px solid rgba(80, 100, 180, 0.5);
+
     border-radius: 18px;
 
     padding: 35px 40px;
@@ -123,6 +160,7 @@ body {
 
     font-size: 40px;
     font-weight: 800;
+
     line-height: 1.1;
 
     margin-bottom: 18px;
@@ -133,6 +171,7 @@ body {
 
     font-size: 18px;
     font-weight: 500;
+
     line-height: 1.5;
 }
 
@@ -142,11 +181,12 @@ body {
 ========================= */
 
 .description-card {
-    margin-top: 28px;
+    margin-top: 40px;
 
     background: rgba(20, 18, 45, 0.92);
 
     border: 1px solid rgba(80, 100, 180, 0.5);
+
     border-radius: 18px;
 
     padding: 40px 60px;
@@ -157,6 +197,7 @@ body {
 
     font-size: 17px;
     font-weight: 400;
+
     line-height: 1.6;
 }
 
@@ -168,6 +209,7 @@ body {
 .buttons {
     display: flex;
     gap: 15px;
+
     margin-top: 20px;
 }
 
@@ -231,27 +273,80 @@ body {
 
 .page-header {
     position: relative;
-
     width: 100%;
     height: 48px;
-
     flex-shrink: 0;
 }
+
+
+/* Logo */
 
 .page-header .brand {
     position: absolute;
 
-    top: 0;
+    top: 5px;
     left: 5px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    z-index: 5;
 }
+
+.page-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.page-header .logo img {
+    width: 42px;
+    height: auto;
+    display: block;
+}
+
+
+/* Logo text */
+
+.page-header .letter {
+    display: block;
+}
+
+.page-header .letter .text {
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+
+    white-space: nowrap;
+}
+
+.page-header .letter .text span {
+    color: #f43f5e;
+}
+
+
+/* Menu */
 
 .page-header .menu {
     position: absolute;
 
     top: 3px;
     right: 5px;
+
+    display: block;
+
+    z-index: 5;
 }
 
+.page-header .menu img {
+    width: 28px;
+    height: auto;
+    display: block;
+}
 
 /* =========================
    INTRO
@@ -289,6 +384,7 @@ body {
     color: #9ca3af;
 
     font-size: 14px;
+
     line-height: 1.4;
 }
 
@@ -337,6 +433,7 @@ body {
 
 .trap-card:hover {
     transform: translateY(-4px);
+
     background: #1d1d36;
 }
 
@@ -356,6 +453,7 @@ body {
 
 .trap-icon {
     font-size: 22px;
+
     line-height: 1;
 }
 
@@ -392,6 +490,7 @@ body {
     color: #d1d5db;
 
     font-size: 11px;
+
     line-height: 1.5;
 }
 
@@ -428,27 +527,35 @@ body {
     .hero-content {
         width: 55%;
     }
+
+    .nav-links a {
+        padding: 4px 18px;
+    }
 }
 
 
 @media (max-width: 600px) {
 
-    /* HOME */
+    /* =========================
+       HOME
+    ========================= */
 
-    .brand {
+    .navbar {
         left: 15px;
+        right: 15px;
     }
 
-    .logo img {
+    .navbar .logo img {
         width: 36px;
     }
 
-    .letter .text {
-        font-size: 15px;
+    .navbar .letter .text {
+        font-size: 11px;
     }
 
-    .menu {
-        right: 18px;
+    .nav-links a {
+        font-size: 12px;
+        padding: 5px 10px;
     }
 
     .hero-content {
@@ -477,10 +584,13 @@ body {
     }
 
 
-    /* BIG SIX */
+    /* =========================
+       BIG SIX
+    ========================= */
 
     .big-six {
         padding: 10px 12px 20px;
+
         overflow: auto;
     }
 
@@ -498,6 +608,408 @@ body {
 
     .trap-card {
         height: auto;
+
         min-height: 150px;
     }
+}
+
+/* =========================================================
+   ROAD TO RECOVERY
+========================================================= */
+
+.recovery {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #0d0d0d;
+    color: #ffffff;
+
+    padding: 100px 7% 110px;
+
+    position: relative;
+}
+
+
+/* =========================
+   RECOVERY HEADER
+========================= */
+
+.recovery-header {
+    max-width: 750px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+.recovery-header .section-label {
+    color: #f43f5e;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.recovery-header h1 {
+    color: #ffffff;
+
+    font-size: 38px;
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+.recovery-intro {
+    color: #9ca3af;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   RECOVERY ROAD
+========================= */
+
+.recovery-road {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+
+    position: relative;
+}
+
+
+/* Connecting line */
+
+.recovery-road::before {
+    content: "";
+
+    position: absolute;
+
+    top: 34px;
+    left: 8%;
+    right: 8%;
+
+    height: 2px;
+
+    background: #30304d;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   RECOVERY CARD
+========================= */
+
+.recovery-card {
+    position: relative;
+
+    background: #19192f;
+
+    border: 1px solid rgba(80, 100, 180, 0.35);
+
+    border-radius: 14px;
+
+    padding: 0 24px 28px;
+
+    z-index: 2;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.recovery-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(244, 63, 94, 0.5);
+}
+
+
+/* =========================
+   PHASE NUMBER
+========================= */
+
+.phase-number {
+    width: 68px;
+    height: 68px;
+
+    margin: 18px auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #19192f;
+
+    border: 2px solid #f43f5e;
+
+    border-radius: 50%;
+
+    color: #f43f5e;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   PHASE CONTENT
+========================= */
+
+.phase-content {
+    text-align: center;
+}
+
+.phase-content h2 {
+    color: #ffffff;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    margin-bottom: 13px;
+}
+
+.phase-content p {
+    color: #c5c7d0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.phase-action {
+    display: inline-block;
+
+    background: #174a82;
+
+    color: #b9d3ee;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   COMPARATIVE MATRIX
+========================================================= */
+
+.compare {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #10101a;
+    color: #ffffff;
+
+    padding: 100px 7%;
+}
+
+
+/* =========================
+   MATRIX HEADER
+========================= */
+
+.compare-header {
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.compare-header .section-label {
+    color: #f43f5e;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.compare-header h1 {
+    color: #ffffff;
+
+    font-size: 38px;
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+.compare-intro {
+    color: #9ca3af;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+
+.matrix-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(80, 100, 180, 0.35);
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.matrix {
+    width: 100%;
+
+    min-width: 850px;
+
+    border-collapse: collapse;
+
+    background: #19192f;
+}
+
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+.matrix thead {
+    background: #202044;
+}
+
+.matrix th {
+    color: #ffffff;
+
+    text-align: left;
+
+    padding: 18px 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    border-bottom: 1px solid rgba(80, 100, 180, 0.4);
+}
+
+
+/* =========================
+   TABLE BODY
+========================= */
+
+.matrix td {
+    color: #d1d5db;
+
+    padding: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    border-bottom: 1px solid rgba(80, 100, 180, 0.2);
+}
+
+
+/* Financial Trap */
+
+.matrix td:first-child {
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+/* Recovery Protocol */
+
+.matrix td:last-child {
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   MECHANISM TAG
+========================= */
+
+.mechanism {
+    display: inline-block;
+
+    background: #174a82;
+
+    color: #b9d3ee;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   TABLE ROWS
+========================= */
+
+.matrix tbody tr {
+    transition: background 0.2s ease;
+}
+
+.matrix tbody tr:hover {
+    background: #1d1d36;
+}
+
+.matrix tbody tr:last-child td {
+    border-bottom: none;
+}
+/* =========================
+   RISK SEVERITY
+========================= */
+
+.severity {
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.severity.high {
+    color: #f59e0b;
+}
+
+.severity.critical {
+    color: #f43f5e;
+}
+
+.severity.medium {
+    color: #fbbf24;
 }
